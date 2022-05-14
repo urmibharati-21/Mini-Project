@@ -1,6 +1,6 @@
 import React from "react";
 import bookmyshow from './image/bookmyshow.jpg';
-import "./Booking.css";
+import "./styles/Booking.css";
 
 
 
@@ -10,24 +10,24 @@ class Booking extends React.Component {
         total: 0
     }
 
-    componentDidMount(){
-        var count=0;
-      var seats=document.getElementsByClassName("seat");
-      for(var i=0;i<seats.length;i++){
-        var item=seats[i];
-        
-        item.addEventListener("click",(event)=>{
-          var price= document.getElementById("movie").value;
+    componentDidMount() {
+        var count = 0;
+        var seats = document.getElementsByClassName("seat");
+        for (var i = 0; i < seats.length; i++) {
+            var item = seats[i];
 
-          if (!event.target.classList.contains('occupied') && !event.target.classList.contains('selected') ){
-          count++;
-          
-          var total=count*price;
-          event.target.classList.add("selected");
-          this.setState({ count,total});
-          }
-        })
-      }
+            item.addEventListener("click", (event) => {
+                var price = document.getElementById("movie").value;
+
+                if (!event.target.classList.contains('occupied') && !event.target.classList.contains('selected')) {
+                    count++;
+
+                    var total = count * price;
+                    event.target.classList.add("selected");
+                    this.setState({ count, total });
+                }
+            })
+        }
     }
 
     render() {
@@ -41,7 +41,7 @@ class Booking extends React.Component {
 
                 <div className="movie-container">
                     <label className="select-movie">Pick a movie:</label>
-                    <select id="movie" className= "movieborder">
+                    <select id="movie" className="movieborder">
                         <option value="400">KGF2 (R.s 400)</option>
                         <option value="300">Dharmveer (R.s 300)</option>
                         <option value="300">Dr. Strange: In the Multiverse of madness (R.s 300)</option>

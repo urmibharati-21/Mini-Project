@@ -1,5 +1,5 @@
 import React from "react";
-import './Home.css';
+import './styles/Home.css';
 import bookmyshow from "./image/bookmyshow.jpg";
 import banner from "./image/bannerbms.jpg";
 
